@@ -1,0 +1,65 @@
+{{define "head"}}
+
+{{end}}
+
+
+{{define "content"}}
+<body class="d-flex align-items-center py-4 bg-body-tertiary">
+
+
+<main class="form-signin flex-shrink-0">
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="check-circle-fill" viewBox="0 0 16 16">
+            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+        </symbol>
+        <symbol id="info-fill" viewBox="0 0 16 16">
+            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+        </symbol>
+        <symbol id="exclamation-triangle-fill" viewBox="0 0 16 16">
+            <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+        </symbol>
+    </svg>
+
+    <form method="POST">
+        <img class="mb-4" src="/static/airbnb.png" alt="" width="100%">
+        <h1 class="h3 mb-3 fw-normal">Arrivée autonome</h1>
+        {{ if .errorMessage }}
+        <div class="alert alert-danger d-flex align-items-center" role="alert">
+            <svg class="bi me-2" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+            <div>
+                {{ .errorMessage }}
+            </div>
+        </div>
+        {{ end }}
+
+        {{ if .successMessage }}
+        <div class="alert alert-success d-flex align-items-center" role="alert">
+            <svg class="bi me-2" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+            <div>
+                {{ .successMessage }}
+            </div>
+        </div>
+        {{ end }}
+        <p>
+            Pour votre arrivée dans le logement, l'ouverture de la porte d'entrée se fait via cette application.
+        </p>
+
+        <ol>
+            <li>En cliquant sur le bouton, la porte de l'immeuble va s'ouvrir.</li>
+            <li>Au premier étage, vous trouverez la porte de l'appartement ainsi qu'une boite à clef.</li>
+            <li>Le code de la boite à clef vous a été communiqué sur Airbnb.</li>
+            <li><span class="text-danger"><i data-feather="alert-octagon"></i> <strong>ATTENTION</strong></span>, vous ne devez pas claquer la porte sans avoir les clefs sur vous, sans clef, la porte de l'appartement ne s'ouvre pas de l'extérieur.</li>
+        </ol>
+
+        <div class="form-check text-start my-3">
+            <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault" checked="checked">
+            <input type="hidden" value="{{.csrfToken}}" name="csrf">
+            <label class="form-check-label" for="flexCheckDefault">
+                Je garde les clefs avec moi lorsque je ferme la porte de l'appartement, tout oubli à l'intérieur m'empêcherait d'ouvrir la porte de l'appartement.
+            </label>
+        </div>
+        <button class="btn btn-primary w-100 py-2" type="submit"> <i data-feather="key"></i> Ouvrir la porte d'immeuble</button>
+    </form>
+</main>
+{{end}}
