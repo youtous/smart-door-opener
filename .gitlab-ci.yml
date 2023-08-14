@@ -31,7 +31,7 @@ build:
 build-latest:
   stage: push
   only:
-    - master # latest from master only
+    - main # latest from master only
   script:
     - docker pull $CONTAINER_TEST_IMAGE
     - docker tag $CONTAINER_TEST_IMAGE $CONTAINER_RELEASE_IMAGE

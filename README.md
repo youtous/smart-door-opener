@@ -1,10 +1,10 @@
 # Smart Door Opener
 
-[![pipeline status](https://gitlab.com/youtous/smart-door-opener/badges/master/pipeline.svg)](https://gitlab.com/youtous/smart-door-opener/-/commits/master)
+[![pipeline status](https://gitlab.com/youtous/smart-door-opener/badges/main/pipeline.svg)](https://gitlab.com/youtous/smart-door-opener/-/commits/main)
 [![Docker image](https://img.shields.io/badge/image-registry.gitlab.com%2Fyoutous%2Fsmart--door--opener-e4f0fb?logo=docker)](https://gitlab.com/youtous/smart-door-opener/container_registry)
 [![GitHub Repo stars](https://img.shields.io/github/stars/youtous/smart-door-opener?label=✨%20youtous%2Fsmart-door-opener&style=social)](https://github.com/youtous/smart-door-opener/)
 [![Gitlab Repo](https://img.shields.io/badge/gitlab.com%2Fyoutous%2Fsmart--door--opener?label=✨%20youtous%2Fsmart-door-opener&style=social&logo=gitlab)](https://gitlab.com/youtous/smart-door-opener/)
-[![Licence](https://img.shields.io/github/license/youtous/smart-door-opener)](https://github.com/youtous/smart-door-opener/blob/master/LICENSE)
+[![Licence](https://img.shields.io/github/license/youtous/smart-door-opener)](https://github.com/youtous/smart-door-opener/blob/main/LICENSE)
 
 
 This application open a door remotely using IFTTT and a FingerBot.

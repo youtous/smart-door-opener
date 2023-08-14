@@ -67,6 +67,7 @@ func main() {
 		CLI.Server.IFTTTWebHookEventName,
 		)
 
+	e.GET("/", doorHandler.GetOpenDoor)
 	e.GET("/:accessCode", doorHandler.GetOpenDoor)
 	e.POST("/:accessCode", doorHandler.PostOpenDoor)
 	e.GET("/_health", func(c echo.Context) error {
